@@ -6,8 +6,24 @@
 // NOTE: You MUST use double/nested FOR loop to solve this exercise. The array.includes() method is NOT allowed.
 
 export function separateNamesWithAFromRest(array) {
-  // Your code goes here...
-
+  let nestedArray = [];
+  let namesWith = [];
+  let namesWithout = [];
+  for (let names of array) {
+    let foundA = false;
+    for (let char of names) {
+      if (char.toLowerCase() === 'a') {
+        foundA = true;
+      }
+    }
+    if (foundA) {
+      namesWith.push(names);
+    } else {
+      namesWithout.push(names);
+    }
+  }
+  nestedArray.push(namesWith, namesWithout);
+  return nestedArray;
 }
 
 

@@ -6,11 +6,18 @@
 // NOTE: You can NOT use the array.flat() method in your code
 
 export function flatArrays(array) {
-  // Your code goes here...
-
+  let flat = [];
+  for (let a of array) {
+    if (Array.isArray(a)){
+      for (let b of a) {
+        flat.push(b);
+      }
+    } else {
+      flat.push(a);
+    }
+  }
+  return flat;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-16"
